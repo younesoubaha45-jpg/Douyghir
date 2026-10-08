@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/*.js", "use": "@vercel/node" },
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/comments", "dest": "/api/comments.js" },
+    { "src": "/api/content", "dest": "/api/content.js" },
+    { "src": "/api/upload", "dest": "/api/upload.js" },
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ]
+}
